@@ -1,15 +1,16 @@
 {
   "type": "module",
   "name": "@ikasoba000/esbuild-postcss-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "exports": {
-    "import": "./.o/index.esm.js",
-    "require": "./.o/index.cjs.js"
+    "import": "./.o/esm/index.js",
+    "require": "./.o/cjs/index.js",
+    "types": "./.o/types/index.ts"
   },
   "scripts": {
-    "build": "tsc --outDir .o/esm && tsc --module commonjs --outDir .o/cjs",
+    "build": "tsc --outDir .o/esm && tsc --module commonjs --outDir .o/cjs && tsc --outdir .o/types --declaration --emitDeclarationOnly",
     "prepare": "npm run build"
   },
   "keywords": [
